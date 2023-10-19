@@ -1,9 +1,27 @@
 import java.util.Scanner;
-
+import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-        firstask();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("""
+                1. Перше завдання.
+                2. Друге завдання.
+                3. Третє завдання.
+                """);
+        System.out.print("Ваш вибір: ");
+        int input = scanner.nextInt();
+
+
+        switch (input) {
+            case 1 -> firstask();
+            case 2 -> secondtask();
+            case 3 -> thirdtask();
+            case 0 -> {
+                break;
+            }
+            default -> System.out.println("Немає такого завдання(");
+        }
     }
 
     public static void firstask() {
@@ -72,5 +90,54 @@ public class Main {
             entity.show();
             System.out.println();
         }
+    }
+
+    public static void secondtask(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введіть розмір масиву: ");
+        int size = scanner.nextInt();
+        int[] elements = new int[size];
+        System.out.print("Введіть масив: ");
+        for (int i = 0; i < elements.length; i++) {
+            elements[i] = scanner.nextInt();
+        }
+        Container buble = new Bubble(elements);
+        buble.sort();
+        System.out.println("Сортування бульбашкою: "+ Arrays.toString(buble.getElements()));
+        System.out.println("Корінь з суми елементів: " + buble.norma());
+
+
+
+        Container choise = new Choise(elements);
+        choise.sort();
+        System.out.println("Сортування вибіркою: "+ Arrays.toString(choise.getElements()));
+
+        System.out.println("Середнє арифметичне елементів: " +choise.norma());
+
+
+    }
+
+    public static void thirdtask(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введіть розмір масиву: ");
+        int size = scanner.nextInt();
+        int[] elements = new int[size];
+        System.out.print("Введіть масив: ");
+        for (int i = 0; i < elements.length; i++) {
+            elements[i] = scanner.nextInt();
+        }
+        IContainer buble = (IContainer) new IBubble(elements);
+        IContainer choise = (IContainer) new IChoise(elements);
+
+        buble.sort();
+        choise.sort();
+
+        System.out.println("Сортування бульбашкою: "+ Arrays.toString(elements));
+        System.out.println("Корінь з суми елементів: " + buble.norma());
+
+
+        System.out.println("Сортування вибіркою: "+ Arrays.toString(elements));
+        System.out.println("Середнє арифметичне елементів: " +choise.norma());
+
     }
 }
