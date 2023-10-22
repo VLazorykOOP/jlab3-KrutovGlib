@@ -12,4 +12,9 @@ public class Test extends ExaminationEntity{
         System.out.println("Кількість питань: "+ numQuestions);
 
     }
+
+    @Override
+    public String toString() {
+        return "Тест:\n"+ super.toString()+"\nКількість питань: "+ numQuestions+"\n";
+    }
 }

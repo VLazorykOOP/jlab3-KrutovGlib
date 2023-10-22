@@ -12,4 +12,9 @@ public class Quiz extends ExaminationEntity{
         System.out.println("Максимальний бал: "+maxScore);
 
     }
+
+    @Override
+    public String toString() {
+        return "Випробування:\n"+super.toString()+"\nМаксимальний бал: "+maxScore+"\n";
+    }
 }

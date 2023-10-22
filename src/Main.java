@@ -87,8 +87,8 @@ public class Main {
         ExaminationEntity[] examinationEntities = {test1, exam1, graduationExam1, quiz1};
 
         for (ExaminationEntity entity : examinationEntities) {
-            entity.show();
-            System.out.println();
+//            entity.toString();
+            System.out.println(entity);
         }
     }
 
@@ -105,7 +105,6 @@ public class Main {
         buble.sort();
         System.out.println("Сортування бульбашкою: "+ Arrays.toString(buble.getElements()));
         System.out.println("Корінь з суми елементів: " + buble.norma());
-
 
 
         Container choise = new Choise(elements);
@@ -140,4 +139,6 @@ public class Main {
         System.out.println("Середнє арифметичне елементів: " +choise.norma());
 
     }
+
+
 }

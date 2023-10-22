@@ -11,4 +11,9 @@ public class GraduationExam extends ExaminationEntity {
         super.show();
         System.out.println("Кількість предметів: "+numSubjects);
     }
+
+    @Override
+    public String toString() {
+        return "Випускний екзамен:\n"+super.toString()+"\nКількість предметів: "+numSubjects+"\n" ;
+    }
 }

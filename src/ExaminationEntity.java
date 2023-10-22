@@ -9,11 +9,16 @@ public class ExaminationEntity {
         this.duration = duration;
     }
 
-    public void show(){
+    public void show(){//replace with toString
         System.out.println("Назва: "+ title);
         System.out.println("Дата: "+ date);
         System.out.println("Тривалість: "+ duration + " годин.");
 
+    }
+
+    @Override
+    public String toString() {
+        return "Назва: " + title + "\nДата: " + date + "\nТривалість: " + duration + " годин(-и).";
     }
 }
 
