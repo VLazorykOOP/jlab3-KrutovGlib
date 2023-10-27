@@ -85,9 +85,7 @@ public class Main {
         Quiz quiz1 = new Quiz(Qtitle, Qdate, Qduration, maxScore);
 
         ExaminationEntity[] examinationEntities = {test1, exam1, graduationExam1, quiz1};
-
         for (ExaminationEntity entity : examinationEntities) {
-//            entity.toString();
             System.out.println(entity);
         }
     }
